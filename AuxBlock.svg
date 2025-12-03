@@ -420,8 +420,7 @@
 			}
 			var rightRotation = Math.atan2(rightUpperOffset, rightUpperArm) / Math.PI * 180;
 			var leftRotation = Math.atan2(-controlLinkPosition, leftLowerArm) / Math.PI * 180;
-			var pilotValvePosition = pilotRodPosition;
-			// TODO: If ASE pressure reduced move pilotValvePosition
+			var pilotValvePosition = pilotRodPosition + ase * 3;
 			document.getElementById("group_control_input").setAttribute('transform', 'translate(' + controlInputPosition + ' 0)');
 			document.getElementById("group_control_link_right").setAttribute('transform', 'rotate(' + rightRotation + ') translate(' + controlInputPosition + ' 0)');
 			document.getElementById("group_control_link").setAttribute('transform', 'translate(' + controlLinkPosition + ' 0)');
