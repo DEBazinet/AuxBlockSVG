@@ -439,13 +439,13 @@
 			}
 			else if (pilotValvePosition < -pilotValveThreshold)
 			{
-				powerPistonPosition += pilotValvePosition + pilotValveThreshold;
+				powerPistonPosition -= pilotValvePosition + pilotValveThreshold;
 				document.getElementById("path_power_right").setAttribute('fill', colorReturn);
 				document.getElementById("path_power_left").setAttribute('fill', colorSupply);
 			}
 			else if (pilotValvePosition > +pilotValveThreshold)
 			{
-				powerPistonPosition += pilotValvePosition - pilotValveThreshold;
+				powerPistonPosition -= pilotValvePosition - pilotValveThreshold;
 				document.getElementById("path_power_right").setAttribute('fill', colorSupply);
 				document.getElementById("path_power_left").setAttribute('fill', colorReturn);
 			}
