@@ -1,0 +1,581 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit -->
+	<!-- Control boxes: -->
+	<!-- Control Input rod farther down... -->
+	<g id = "group_aux_pressure"
+		transform = "translate(100,100)"
+		onclick="aux_pressure_click(event)">
+		<rect id="rect_aux_pressure" width="50" height="30" rx="10" ry="10" stroke="#000000"/>
+		<text fill="#7f7f7f" font-family="Serif" font-size="12" id="text_aux__pressure" stroke="#000000" stroke-width="0" text-anchor="middle" x="25" y="15">AUX</text>
+		<text fill="#7f7f7f" font-family="Serif" font-size="12" id="text_pressure__aux" stroke="#000000" stroke-width="0" text-anchor="middle" x="25" y="25">Pressure</text>
+	</g>
+	<g id = "group_trim" 
+		transform = "translate(100,150)"
+		onclick="trim_click(event)">
+		<rect id="rect_trim" width="50" height="30" rx="10" ry="10" stroke="#000000"/>
+		<text fill="#7f7f7f" font-family="Serif" font-size="12" id="text_beeper__trim" stroke="#000000" stroke-width="0" text-anchor="middle" x="25" y="15">Beeper</text>
+		<text fill="#7f7f7f" font-family="Serif" font-size="12" id="text_trim__beeper" stroke="#000000" stroke-width="0" text-anchor="middle" x="25" y="25">Trim</text>
+	</g>
+	<g id = "group_ase"
+		onmousedown = "ase_mousedown(event)"
+		onmousemove = "ase_mousemove(event)" 
+		onmouseup = "ase_mouseup(event)"
+		onmouseleave = "ase_mouseleave(event)" >
+		<rect id="rect_ase" x="109" y="26" width="30" height="40" fill="#ffffff" stroke="#000000"/>
+		<rect id="rect_ase_value" x="110" y="46" width="28" height="0" fill="#ff0000" stroke="#ff0000"/>
+		<rect id="rect_ase" x="109" y="26" width="30" height="40" fill="#ffffff" fill-opacity="0" stroke="#000000"/>
+		<text id="text_ase_left" x="124" y="40" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">left</text>
+		<text id="text_ase_right" x="124" y="60" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">right</text>
+		<rect id="rect_ase" x="109" y="26" width="30" height="40" fill="#ffffff" fill-opacity="0" stroke="#000000"/>
+	</g>
+	<g id = "group_trim_left" 
+		onmousedown = "trim_left_mousedown(event)"
+		onmouseup = "trim_left_mouseup(event)"
+		onmouseleave = "trim_left_mouseleave(event)" >
+		<rect id="rect_trim_left" x="109" y="285" width="30" height="15" fill="#ffffff" stroke="#000000"/>
+		<text id="text_trim_left" x="124" y="297" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">left</text>
+	</g>
+	<g id = "group_trim_right" 
+		onmousedown = "trim_right_mousedown(event)"
+		onmouseup = "trim_right_mouseup(event)"
+		onmouseleave = "trim_right_mouseleave(event)" >
+		<rect id="rect_trim_right" x="109" y="316" width="30" height="15" fill="#ffffff" stroke="#000000"/>
+		<text id="text_trim_right" x="124" y="328" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">right</text>
+	</g>
+	<g id = "group_legend"
+		transform = "translate(500, 10)" >
+		<rect id="rect_legend_supply" x="0" y="0" height="15" width="60" stroke="#000000"/>
+		<text id="text_legend_supply" x="30" y="12" font-family="Serif" font-size="12" fill="#000000" stroke="#000000" stroke-width="0" text-anchor="middle">Supply</text>
+		<rect id="rect_legend_return" x="0" y="20" height="15" width="60" stroke="#000000"/>
+		<text id="text_legend_return" x="30" y="32" font-family="Serif" font-size="12" fill="#ffffff" stroke="#ffffff" stroke-width="0" text-anchor="middle">Return</text>
+		<rect id="rect_legend_retained" x="0" y="40" height="15" width="60" stroke="#000000"/>
+		<text id="text_legend_retained" x="30" y="52" font-family="Serif" font-size="12" fill="#000000" stroke="#000000" stroke-width="0" text-anchor="middle">Retained</text>
+		<rect id="rect_legend_bypass" x="0" y="60" height="15" width="60" stroke="#000000"/>
+		<text id="text_legend_bypass" x="30" y="72" font-family="Serif" font-size="12" fill="#000000" stroke="#000000" stroke-width="0" text-anchor="middle">Bypass</text>
+		<rect id="rect_legend_reduced" x="0" y="80" height="15" width="60" stroke="#000000"/>
+		<text id="text_legend_reduced" x="30" y="92" font-family="Serif" font-size="12" fill="#000000" stroke="#000000" stroke-width="0" text-anchor="middle">Reduced</text>
+	</g>
+	<!-- Static items -->
+	<g id = "group_block">
+		<path id="path_block_main" d="m245,172.5l240,-0.5a12,12 0 0 1 0,24l-75,0.5l0,240l-165,0l0,-264z" fill="#dfdfdf" stroke="#000000" stroke-width="2" transform="matrix(1 0 0 1 0 0) matrix(1 0 0 1 0 0)"/>
+		<path id="path_block_upper" d="m245,170.5l0,-104l68,0l0,-56l56,0l0,56l56,0l0,106l-180,0l0,-2z" fill="#dfdfdf" stroke="#000000" stroke-width="2"/>
+		<rect id="path_block_left" fill="#dfdfdf" height="104" stroke="#000000" stroke-width="2" width="96" x="149" y="253"/>
+	</g>
+	<g id = "group_hydraulics">
+		<path d="m329,186l40,0l0,174l25,0l0,43l-47,0l0,-43l18,0l0,-121l-37,0l0,-42l37,0l0,-7l-40,0l0,-22l-8,0l0,-23l24,0l0,23l-12,0l0,18z" fill="#ff00ff" id="path_power_right" stroke="#000000"/>
+		<path d="m394,360l10,0l0,43l-10,0" fill="#ffffff" id="path_bypass_valve_right" stroke="#000000"/>
+		<path d="m353,168l-12,0l0,-23l24,0l0,23l-8,0l0,14l-66,0l0,15l37,0l0,42l-37,0l0,121l15,0l0,43l-40,0l0,-43l21,0l0,-182l66,0l0,-10z" fill="#ff00ff" id="path_power_left" stroke="#000000"/>
+		<path d="m267,360l-10,0l0,43l10,0" fill="#ffffff" id="path_bypass_valve_left" stroke="#000000"/>
+		<path d="m304,333l23,0l0,-71l-152,0l0,24l-10,0l0.1,15l16.9,0l0,-15l-3,0l0,-19l13,0l0,53l-10,-0.01l0,5.01l15,0l0,-58l107.01,0.01l0,66l0,0l0,0l-0.01,-0.01z" fill="#ff00ff" id="path_trim_retained" stroke="#000000"/>
+		<path d="m327,262l23,0l0,85l-174,0l0,-17l-11,0l0,-15l17,0l0,15l-2,0l0,12l26,0l0,-22l7,0l0,-2l8,0l0,2l7,0l1,-2l6,0l1,2l24,0a8,8 0 1 1 0,5l-24,0l-1,2l-6,0l-1,-2l-7,0l0,2l-8,0l0,-2l-2,0l0,17l133,0l0,-9l-17,0l0,-71z" fill="#FF0000" id="path_trim_supply" stroke="#000000"/>
+		<path d="m182,291l78,0a8,8 0 1 1 0,5l-78,0l0,-5z" fill="#0000ff" id="path_trim_return" stroke="#000000"/>
+		<path d="m397,188l2,0l0,-46l-35,0l0,4l-4,0l0,-4l-38,0l0,4l-4,0l0,-8l81,0l0,-39.49l-60,0.49l0,-8.99l-6,-0.01l0,-4l3,0l-4,-3l4,-3l-3,0l0,-4.99l16,0l0,5l-3,0l4,2.99l-4,3.01l3,0l0,3.99l-6,0l0,5.01l60,-1.01l0,98l-6,0a8,8 0 1 1 0,-4z" fill="#0000ff" id="path_pilot_return" stroke="#000000"/>
+		<path d="m260,188l-3,0l0,-69l82,0l0,27l4,0l0,-37l4,0l3.5,-2l-3.5,-2l-12,0l-3,2l3,2l4,0l0,6l-86,0l0,77l7,0a8,8 0 1 0 0,-4z" fill="#FF0000" id="path_pilot_supply" stroke="#000000"/>
+		<path d="m325,413l0,-15l-5,0l0,5l-14,0l0,-43l14,0l0,6l15,0l0,-6l12,0l0,43l-12,0l0,-5l-5,0l0,15a8,8 0 1 1 -5,0z" fill="#ff0000" id="path_bypass_valve_supply" stroke="#000000"/>
+		<path d="m317,145l-15,0l0,-36l26,0l3,-2l-3,-2l-26,0l0,-20l25,0l3,-2l-3,-2l-29,0l0,64l-11,0l0,23l30,0l0,-23z" fill="#ff0000" id="path_pilot_left" stroke="#000000"/>
+		<path d="m385,145l10,0l0,23l-30,0l0,-23l16,0l0,-36l-27,0l-3,-2l3,-2l27,0l0,-20l-29,0l-1,-2l3,-2l31,0l0,64z" fill="#ff0000" id="path_pilot_right" stroke="#000000"/>
+	</g>
+	<g id = "group_ase_valve">
+		<rect id="rect_ase_valve_cap" x="329" y="72" width="24" height="2" stroke="#000000" fill="#7f7f7f"/>
+		<path id="path_ase_valve_case" d="m349,72l0,-7l12,0l0,-48l-40,0l0,48l12,0l0,7" stroke="#000000" fill-opacity="0"/>
+		<path id="path_ase_valve_left" d="m336,23l-10,0l0,44l10,0l0,-4l-6,0l0,-36l6,0l0,-4z" stroke="#000000" fill="#ffffff"/>
+		<path id="path_ase_valve_right" d="m346,23l10,0l0,44l-10,0l0,-4l6,0l0,-36l-6,0l0,-4z" stroke="#000000" fill="#ffffff"/>
+	</g>
+	<g id = "group_ase_input">
+		<path d="m140,61l197,0l8,-3l-10,-5l9,-5l-187,0" fill="none" fill-opacity="0" id="path_ase_input_lower" stroke="#000000"/>
+		<path d="m140,30l204,0l-9,5.5l8,4.5l-6,3l-180,0" fill="none" fill-opacity="0" id="path_ase_input_upper" stroke="#000000"/>
+	</g>
+	<g id = "group_ase_ground">
+		<line fill="none" fill-opacity="0" id="group_ase_ground_1" stroke="#000000" x1="157" x2="157" y1="38" y2="52"/>
+		<line fill="none" fill-opacity="0" id="group_ase_ground_2" stroke="#000000" x1="153" x2="153" y1="41" y2="49"/>
+		<line fill="none" fill-opacity="0" id="group_ase_ground_3" stroke="#000000" x1="149" x2="149" y1="43" y2="47"/>
+	</g>
+	<g id = "group_ase_input_label">
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_ASE" stroke="#000000" stroke-width="0" text-anchor="end" x="100" y="43">ASE</text>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_Input" stroke="#000000" stroke-width="0" text-anchor="end" x="100" y="54">Input</text>
+	</g>
+	<g id = "group_strick_trim_input_label">
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_Stick" stroke="#000000" stroke-width="0" text-anchor="end" x="105" y="302">Stick</text>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_Trim" stroke="#000000" stroke-width="0" text-anchor="end" x="105" y="312">Trim</text>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_ST_Input" stroke="#000000" stroke-width="0" text-anchor="end" x="105" y="322">Input</text>
+	</g>
+	<g id = "group_stick_trim_valves_label">
+		<line fill="none" id="line_stick_trim_valves_1" stroke="#000000" x1="120" x2="127" y1="265" y2="265"/>
+		<line fill="none" id="line_stick_trim_valves_2" stroke="#000000" x1="152" x2="127" y1="293" y2="265"/>
+		<line fill="none" id="line_stick_trim_valves_3" stroke="#000000" x1="152" x2="127" y1="323" y2="265"/>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_Stick_Trim" stroke="#000000" stroke-width="0" text-anchor="end" x="115" y="258">Stick Trim</text>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_Valves" stroke="#000000" stroke-width="0" text-anchor="end" x="115" y="268">Valves</text>
+	</g>
+	<g id = "group_trim_ground">
+		<line fill="none" id="line_trim_ground_1" stroke="#000000" x1="112" x2="112" y1="307" y2="309"/>
+		<line fill="none" id="line_trim_ground_2" stroke="#000000" x1="115" x2="115" y1="306" y2="310"/>
+		<line fill="none" id="line_trim_ground_3" stroke="#000000" x1="118" x2="118" y1="305" y2="311"/>
+		<line fill="none" id="line_trim_ground_4" stroke="#000000" x1="118" x2="129" y1="308" y2="308"/>
+	</g>
+	<g id = "group_stick_trim_valve_left">
+		<rect fill="#ffffff" height="15" id="rect_strick_trim_valve_left" stroke="#000000" width="13" x="152" y="286"/>
+		<rect fill="#ffffff" height="4" id="rect_strick_trim_valve_left_top" stroke="#000000" width="16" x="153" y="280"/>
+		<rect fill="#ffffff" height="4" id="rect_strick_trim_valve_left_btm" stroke="#000000" width="16" x="153" y="303"/>
+		<line fill="none" id="line_stick_trim_valve_left_input" stroke="#000000" x1="109" x2="153" y1="303" y2="303"/>
+		<line fill="none" id="line_stick_trim_valve_left_return" stroke="#000000" x1="128" x2="153" y1="307" y2="307"/>
+	</g>
+	<g id = "group_stick_trim_valve_right">
+		<rect fill="#ffffff" height="15" id="rect_strick_trim_valve_right" stroke="#000000" width="13" x="152" y="315"/>
+		<rect fill="#ffffff" height="4" id="rect_strick_trim_valve_right_top" stroke="#000000" width="16" x="153" y="332"/>
+		<rect fill="#ffffff" height="4" id="rect_strick_trim_valve_right_btm" stroke="#000000" width="16" x="153" y="309"/>
+		<line fill="none" id="line_stick_trim_valve_right_input" stroke="#000000" x1="109" x2="153" y1="313" y2="313"/>
+		<line fill="none" id="line_stick_trim_valve_right_return" stroke="#000000" x1="128" x2="153" y1="309" y2="309"/>
+	</g>
+	<!-- Moving items -->
+	<g id = "group_control_link_right_translate"
+		transform = "translate(540 298)">
+		<g id = "group_control_link_right">
+			<path d="m-11,-81a11,11 0 0 1 22,0l0,201a11,11 0 0 1 -22,0l0,-201z" fill="#7f7f7f" id="path_control_link_right" stroke="#000000"/>
+		</g>
+	</g>
+	<g id = "group_control_link_left_translate"
+		transform = "translate(485 184)">
+		<g id = "group_control_link_left">
+			<path d="m-12,-28a11,11 0 0 1 22,0l0,262a11,11 0 0 1 -22,0l0,-262z" fill="#7f7f7f" id="path_control_link_left" stroke="#000000"/>
+			<circle cx="0" cy="0" fill="#ffffff" id="circle_block" r="3" stroke="#000000"/>
+		</g>
+	</g>
+	<g id = "group_control_link">
+		<path d="m484,407l56,0a11,11 0 0 1 0,22l-56,0a11,11 0 0 1 0,-22z" fill="#7f7f7f" id="path_control_link" stroke="#000000"/>
+		<circle cx="484" cy="418" fill="#ffffff" id="circle_control_link_left" r="3" stroke="#000000"/>
+		<circle cx="540" cy="418" fill="#ffffff" id="circle_control_link_right" r="3" stroke="#000000"/>
+	</g>
+	<g id = "group_trim_valve_left">
+		<path d="m165,287l4,0l0,2l9,0l3,2l0,5l-3,2l-9,0l0,2l-4,0l0,-13z" fill="#7f7f7f" id="path_trim_valve_left" stroke="#000000"/>
+	</g>
+	<g id = "group_trim_valve_right">
+		<path d="m165,316l4,0l0,2l9,0l3,2l0,5l-3,2l-9,0l0,2l-4,0l0,-13z" fill="#7f7f7f" id="path_trim_valve_right" stroke="#000000"/>
+	</g>
+	<g id = "group_trim_piston">
+		<rect fill="#bfbfbf" height="53" id="rect_trim_piston" stroke="#bfbfbf" width="104" x="336" y="272"/>
+		<path d="m318,263l18,0l0,9l104,0l0,9l-3,0l0,-6l-101,0l0,46l101,1l0,-9l3,0l0,12l-104,0l0,7l-18,0l0,-69z" fill="#bfbfbf" id="path_trim_piston" stroke="#000000"/>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_trim_piston" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0) rotate(-90 327.004 297.625)" x="326.88" y="301.75">Trim Piston</text>
+	</g>
+	<g id = "group_trim_spring_translate"
+		transform = "translate(344 280)">
+		<g id = "group_trim_spring">
+			<path id="path_trim_spring_1" d="m3,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_2" d="m13,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_3" d="m23,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_4" d="m33,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_5" d="m43,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_6" d="m53,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_7" d="m63,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_trim_spring_8" d="m73,36l5,-36l4,0l-5,36l-4,0z" fill="#7f7f7f" stroke="#000000"/>
+			<circle cx="0" cy="0" fill="#7f7f7f" id="circle_trim_spring_1" r="2" stroke="#000000"/>
+			<circle cx="5" cy="36" fill="#7f7f7f" id="circle_trim_spring_2" r="2" stroke="#000000"/>
+			<circle cx="10" cy="0" fill="#7f7f7f" id="circle_trim_spring_3" r="2" stroke="#000000"/>
+			<circle cx="15" cy="36" fill="#7f7f7f" id="circle_trim_spring_4" r="2" stroke="#000000"/>
+			<circle cx="20" cy="0" fill="#7f7f7f" id="circle_trim_spring_5" r="2" stroke="#000000"/>
+			<circle cx="25" cy="36" fill="#7f7f7f" id="circle_trim_spring_6" r="2" stroke="#000000"/>
+			<circle cx="30" cy="0" fill="#7f7f7f" id="circle_trim_spring_7" r="2" stroke="#000000"/>
+			<circle cx="35" cy="36" fill="#7f7f7f" id="circle_trim_spring_8" r="2" stroke="#000000"/>
+			<circle cx="40" cy="0" fill="#7f7f7f" id="circle_trim_spring_9" r="2" stroke="#000000"/>
+			<circle cx="45" cy="36" fill="#7f7f7f" id="circle_trim_spring_10" r="2" stroke="#000000"/>
+			<circle cx="50" cy="0" fill="#7f7f7f" id="circle_trim_spring_11" r="2" stroke="#000000"/>
+			<circle cx="55" cy="36" fill="#7f7f7f" id="circle_trim_spring_12" r="2" stroke="#000000"/>
+			<circle cx="60" cy="0" fill="#7f7f7f" id="circle_trim_spring_13" r="2" stroke="#000000"/>
+			<circle cx="65" cy="36" fill="#7f7f7f" id="circle_trim_spring_14" r="2" stroke="#000000"/>
+			<circle cx="70" cy="0" fill="#7f7f7f" id="circle_trim_spring_15" r="2" stroke="#000000"/>
+			<circle cx="75" cy="36" fill="#7f7f7f" id="circle_trim_spring_16" r="2" stroke="#000000"/>
+			<circle cx="80" cy="0" fill="#7f7f7f" id="circle_trim_spring_17" r="2" stroke="#000000"/>
+			<circle cx="85" cy="36" fill="#7f7f7f" id="circle_trim_spring_18" r="2" stroke="#000000"/>
+		</g>
+	</g>
+	<g id = "group_trim_end_left">
+		<rect id="rect_trim_end_left" x="336" y="283" width="36" height="30" fill="#bfbfbf"/>
+		<path d="m372,283l-32,0l0,-5l-3,0l0,8l32,0l0,3l3,0l0,-6z" fill="#7f7f7f" id="path_trim_end_left_upper" stroke="#000000"/>
+		<path d="m372,313l-33,0l0,5l-3,0l0,-8l33,0l0,-3l3,0l0,6z" fill="#7f7f7f" id="path_trim_end_left_lower" stroke="#000000"/>
+	</g>
+	<g id = "group_trim_end_right">
+		<rect id="rect_trim_end_right" x="398" y="283" width="36" height="30" fill="#bfbfbf"/>
+		<path d="m398,283l35,0l0,-5l3,0l0,8l-35,0l0,3l-3,0l0,-6z" fill="#7f7f7f" id="path_trim_end_right_upper" stroke="#000000"/>
+		<path d="m398,313l35,0l0,4l3,0l0,-7l-35,0l0,-3l-3,0l0,6z" fill="#7f7f7f" id="path_trim_end_right_lower" stroke="#000000"/>
+	</g>
+	<g id = "group_ase_valve_actuator">
+		<path id="path_ase_valve_actuator" d="m339,23l4,0l0,54l4,0l0,6l-4,6l-8,0l0,-6l4,-6l0-54z" stroke="#000000" fill="#7f7f7f"/>
+	</g>
+	<g id = "group_pilot_valve_spring_left_translate"
+		transform = "translate(293,151)">
+		<g id = "group_pilot_valve_spring_left">
+			<path id="pilot_pilot_valve_spring_left_1" d="m5.2,1.5l3,0l-2.6,8l-3,0l2.6,-8z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="pilot_pilot_valve_spring_left_2" d="m10.4,1.5l3,0l-2.6,8l-3,0l2.6,-8z" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_left_1" cx="1.5" cy="1.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_left_2" cx="4.1" cy="9.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_left_3" cx="6.7" cy="1.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_left_4" cx="9.3" cy="9.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_left_5" cx="11.9" cy="1.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_left_6" cx="14.5" cy="9.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+		</g>
+	</g>
+	<g id = "group_pilot_valve_spring_right_translate"
+		transform = "translate(372,151)">
+		<g id = "group_pilot_valve_spring_right">
+			<path id="pilot_pilot_valve_spring_right_1" d="m5.2,1.5l3,0l-2.6,8l-3,0l2.6,-8z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="pilot_pilot_valve_spring_right_2" d="m10.4,1.5l3,0l-2.6,8l-3,0l2.6,-8z" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_right_1" cx="1.5" cy="1.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_right_2" cx="4.1" cy="9.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_right_3" cx="6.7" cy="1.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_right_4" cx="9.3" cy="9.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_right_5" cx="11.9" cy="1.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+			<circle id="circle_pilot_valve_spring_right_6" cx="14.5" cy="9.5" r="1.5" fill="#7f7f7f" stroke="#000000"/>
+		</g>
+	</g>
+	<g id = "group_pilot_valve">
+		<path d="m311,146l12,0l0,4l15,0l0,-4l6,0l0,4l15,0l0,-4l12,0l0,9l12,0l0,3l-12,0l0,9l-12,0l0,-4l-15,0l0,4l-6,0l0,-4l-15,0l0,4l-12,0l0,-9l-12,0l0,-3l12,0l0,-9z" fill="#7f7f7f" id="path_pilot_valve" stroke="#000000"/>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_pilot_valve" stroke="#000000" stroke-width="0" text-anchor="middle" x="340.63" y="161">Pilot Valve</text>
+	</g>
+	<g id = "group_pilot_rod">
+		<path d="m223,124l237,0l0,26l24,0a6,6 0 0 1 0,12l-94,0l0,-12l57,0l0,-14l-212,0l0,14l57,0l0,14l-69,0l0,-40z" fill="#ffffff" id="path_pilot_rod" stroke="#000000"/>
+		<circle cx="484" cy="156" fill="#ffffff" id="circle_pilot_rod" r="3" stroke="#000000"/>
+	</g>
+	<g id = "group_bypass_valve_outer">
+		<rect id="path_bypass_valve_background" x="417" y="367" width="138" height="29" stroke="#000000" fill="#bfbfbf"/>
+		<path d="m347,361l56,0l0,3l157,0l0,35l-157,0l0,3l-56,0l0,-9l83,0l0,3l125,0l0,-29l-124.75,0.25l-0.25,2.75l-83,0l0,-9z" fill="#7f7f7f" id="path_bypass_valve_outer" stroke="#000000"/>
+		<path d="m365,361l15,0l0,9l-4,0l0,-5l-11,0l0,-4z" fill="#ff00ff" id="path_bypass_valve_outer_valve" stroke="#000000"/>
+	</g>
+	<g id = "group_bypass_valve_spring_translate"
+		transform = "translate(434 371)">
+		<g id = "group_bypass_valve_spring">
+			<path id="path_bypass_spring_1" d="m3,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_bypass_spring_2" d="m15,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_bypass_spring_3" d="m27,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_bypass_spring_4" d="m39,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_bypass_spring_5" d="m51,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_bypass_spring_6" d="m63,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<path id="path_bypass_spring_7" d="m75,21l6,-21l6,0l-6,21l-6,0z" fill="#7f7f7f" stroke="#000000"/>
+			<circle cx="0" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_1" r="3" stroke="#000000"/>
+			<circle cx="6" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_2" r="3" stroke="#000000"/>
+			<circle cx="12" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_3" r="3" stroke="#000000"/>
+			<circle cx="18" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_4" r="3" stroke="#000000"/>
+			<circle cx="24" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_5" r="3" stroke="#000000"/>
+			<circle cx="30" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_6" r="3" stroke="#000000"/>
+			<circle cx="36" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_7" r="3" stroke="#000000"/>
+			<circle cx="42" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_8" r="3" stroke="#000000"/>
+			<circle cx="48" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_9" r="3" stroke="#000000"/>
+			<circle cx="54" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_10" r="3" stroke="#000000"/>
+			<circle cx="60" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_11" r="3" stroke="#000000"/>
+			<circle cx="66" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_12" r="3" stroke="#000000"/>
+			<circle cx="72" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_13" r="3" stroke="#000000"/>
+			<circle cx="78" cy="21" fill="#7f7f7f" id="circle_bypass_valve_spring_14" r="3" stroke="#000000"/>
+			<circle cx="84" cy="0" fill="#7f7f7f" id="circle_bypass_valve_spring_15" r="3" stroke="#000000"/>
+		</g>
+	</g>
+	<g id = "group_bypass_valve_inner">
+		<path d="m257,361l50,0l0,10l111,0l0,4l104,0l0,-7l7,0l0,27l-7,0l0,-7l-104,0l0,4l-111,0l0,10l-50,0l0,-41z" fill="#7f7f7f" id="path_bypass_valve_inner" stroke="#000000"/>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_bypass_valve_inner" stroke="#000000" stroke-width="0" text-anchor="middle" x="403.42" y="385.5">Bypass Valve</text>
+		<path d="m294,361l0,4l-9,0l0,13l78,0l0,-7l4,0l0,12l-86,0l0,-22l13,0z" fill="#ff00ff" id="path_bypass_valve_inner_valve" stroke="#000000"/>
+	</g>
+	<g id = "group_control_input" 
+		onmousedown = "control_input_mousedown(event)"
+		onmousemove = "control_input_mousemove(event)" 
+		onmouseup = "control_input_mouseup(event)" 
+		onmouseleave = "control_input_mouseleave(event)" >
+		<path d="m570,298a20,20 0 0 0 0,11l-168,0l0,-4l-33,0l0,4l-3,0l0,-22l3,0l0,4l33,0l0,-4l168,0a20,20 0 0 1 0,11z" fill="#7f7f7f" id="path_control_input" stroke="#000000"/>
+		<circle cx="540" cy="298" fill="#ffffff" id="circle_control_input" r="3" stroke="#000000"/>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_control_input" stroke="#000000" stroke-width="0" text-anchor="middle" x="488.38" y="301.75">Control Input</text>
+	</g>
+	<g id = "group_power_piston" transform="translate(0 0)">
+		<path d="m190,206l130,0l0,-8l16,0l0,8l204,0a11,11 0 0 1 0,22l-204,0l0,10l-16,0l0,-10l-130,0a11,11 0 0 1 0,-22z" fill="#7f7f7f" id="path_power_piston" stroke="#000000"/>
+		<circle cx="190" cy="217" fill="#ffffff" id="circle_power_piston_left" r="3" stroke="#000000"/>
+		<circle cx="540" cy="217" fill="#ffffff" id="circle_power_piston_right" r="3" stroke="#000000"/>
+		<text fill="#000000" font-family="Serif" font-size="12" id="text_power_piston" stroke="#000000" stroke-width="0" text-anchor="middle" x="328" y="221">Power Piston</text>
+	</g>
+	<!-- Scripts -->
+	<script type="text/javascript"><![CDATA[
+		
+		function update()
+		{
+			document.getElementById("rect_aux_pressure").setAttribute('fill', auxPressure ? colorSupply : colorReturn);
+			{ // Bypass
+				document.getElementById("path_bypass_valve_supply").setAttribute('fill', auxPressure ? colorSupply : colorReturn);
+				document.getElementById("path_bypass_valve_outer_valve").setAttribute('fill', auxPressure ? colorRetained : colorBypass);
+				document.getElementById("path_bypass_valve_inner_valve").setAttribute('fill', auxPressure ? colorRetained : colorBypass);
+				var bypassValveInnerPosition = auxPressure ? 0 : +6;
+				var bypassValveOuterPosition = auxPressure ? 0 : -7;
+				var bypassValveSpringScale = (bypassValveSpringSize + bypassValveInnerPosition - bypassValveOuterPosition) / bypassValveSpringSize;
+				document.getElementById("group_bypass_valve_inner").setAttribute('transform', 'translate(' + bypassValveInnerPosition + ' 0)');
+				document.getElementById("group_bypass_valve_outer").setAttribute('transform', 'translate(' + bypassValveOuterPosition + ' 0)');
+				document.getElementById("group_bypass_valve_spring").setAttribute('transform', 'matrix(' + bypassValveSpringScale + ' 0 0 1 ' + bypassValveOuterPosition + ' 0)');
+			}
+			{ // ASE
+				if (ase < 0)
+				{
+					document.getElementById("rect_ase_value").setAttribute('y', '' + (aseCenterY + ase * aseHalfHeight));
+					document.getElementById("rect_ase_value").setAttribute('height', '' + (-ase * aseHalfHeight));
+				}
+				else if (ase > 0)
+				{
+					document.getElementById("rect_ase_value").setAttribute('y', '' + aseCenterY);
+					document.getElementById("rect_ase_value").setAttribute('height', '' + (+ase * aseHalfHeight));
+				}
+				else
+				{
+					document.getElementById("rect_ase_value").setAttribute('height', '0');
+				}
+				document.getElementById("group_ase_valve_actuator").setAttribute('transform', 'translate(0 ' + (ase * 6) + ')');
+				document.getElementById("path_pilot_left").setAttribute('fill', ase < 0 ? colorReduced : colorSupply);
+				document.getElementById("path_pilot_right").setAttribute('fill', ase > 0 ? colorReduced : colorSupply);
+			}
+			{ // Trim
+				document.getElementById("rect_trim").setAttribute('fill', !trimOn ? colorWhite : auxPressure ? colorSupply : colorReturn);
+				var trimRightOn = trimRightDown & trimOn;
+				var trimLeftOn = trimLeftDown & trimOn;
+				document.getElementById("line_stick_trim_valve_right_input").setAttribute('stroke', trimRightOn ? colorRed : colorBlack);
+				document.getElementById("line_stick_trim_valve_left_input").setAttribute('stroke', trimLeftOn ? colorRed : colorBlack);
+				document.getElementById("rect_strick_trim_valve_right").setAttribute('stroke', trimRightOn ? colorRed : colorBlack);
+				document.getElementById("rect_strick_trim_valve_left").setAttribute('stroke', trimLeftOn ? colorRed : colorBlack);
+				document.getElementById("group_trim_valve_right").setAttribute('transform', 'translate(' + (trimRightOn ? -2 : 0) + ' 0)');
+				document.getElementById("group_trim_valve_left").setAttribute('transform', 'translate(' + (trimLeftOn ? -2 : 0) + ' 0)');
+				document.getElementById("path_trim_retained").setAttribute('fill', 
+					auxPressure & trimRightOn ? colorSupply : 
+					trimLeftOn | trimRightOn ? colorReturn : 
+					colorRetained);
+				if (auxPressure & trimOn)
+				{
+					if (trimRightDown) trimPistonPosition += 0.2;
+					if (trimLeftDown) trimPistonPosition -= 0.2;
+					// TODO: Constrain trim piston
+					if (!controlInputDragging)
+					{
+						if (controlInputPosition > trimPistonPosition)
+						{
+							controlInputPosition -= 2;
+							if (controlInputPosition < trimPistonPosition)
+							{
+								controlInputPosition = trimPistonPosition;
+							}
+						}
+						else if (controlInputPosition < trimPistonPosition)
+						{
+							controlInputPosition += 2;
+							if (controlInputPosition > trimPistonPosition)
+							{
+								controlInputPosition = trimPistonPosition;
+							}
+						}
+					}
+					document.getElementById("rect_trim_right").setAttribute('fill', trimRightDown ? colorReturn : colorRetained);
+					document.getElementById("rect_trim_left").setAttribute('fill', trimLeftDown ? colorSupply : colorRetained);
+					document.getElementById("path_trim_supply").setAttribute('fill', colorSupply);
+				}
+				else
+				{
+					if (trimPistonPosition > controlInputPosition)
+					{
+						trimPistonPosition -= 2;
+						if (trimPistonPosition < controlInputPosition)
+						{
+							trimPistonPosition = controlInputPosition;
+						}
+					}
+					else if (trimPistonPosition < controlInputPosition)
+					{
+						trimPistonPosition += 2;
+						if (trimPistonPosition > controlInputPosition)
+						{
+							trimPistonPosition = controlInputPosition;
+						}
+					}
+					// TODO: Constrain trim piston
+					document.getElementById("rect_trim_right").setAttribute('fill', trimRightDown ? colorGrey : colorWhite);
+					document.getElementById("rect_trim_left").setAttribute('fill', trimLeftDown ? colorGrey : colorWhite);
+					document.getElementById("path_trim_supply").setAttribute('fill', colorReturn);
+				}
+				document.getElementById("group_trim_piston").setAttribute('transform', 'translate(' + trimPistonPosition + ' 0)');
+				var trimEndLeftPosition = Math.max(trimPistonPosition, controlInputPosition);
+				var trimEndRightPosition = Math.min(trimPistonPosition, controlInputPosition);
+				var trimSpringScale = (trimSpringSize + trimEndRightPosition - trimEndLeftPosition) / trimSpringSize;
+				document.getElementById("group_trim_end_left").setAttribute('transform', 'translate(' + trimEndLeftPosition + ' 0)');
+				document.getElementById("group_trim_end_right").setAttribute('transform', 'translate(' + trimEndRightPosition + ' 0)');
+				document.getElementById("group_trim_spring").setAttribute('transform', 'matrix(' + trimSpringScale + ' 0 0 1 ' + trimEndLeftPosition + ' 0)');
+			}
+			document.getElementById("path_pilot_supply").setAttribute('fill', auxPressure ? colorSupply : colorReturn);
+			var rightUpperOffset = powerPistonPosition - controlInputPosition;
+			var rightLowerOffset = -rightUpperOffset / rightUpperArm * rightLowerArm;
+			var controlLinkPosition = controlInputPosition + rightLowerOffset;
+			var pilotRodPosition = -controlLinkPosition / leftLowerArm * leftUpperArm;
+			var movePowerPiston = false;
+			if (pilotRodPosition < -limitPilotRod)
+			{
+				pilotRodPosition = -limitPilotRod
+				movePowerPiston = true;
+			}
+			else if (pilotRodPosition > +limitPilotRod)
+			{
+				pilotRodPosition = +limitPilotRod
+				movePowerPiston = true;
+			}
+			if (movePowerPiston)
+			{
+				controlLinkPosition = -pilotRodPosition / leftUpperArm * leftLowerArm;
+				rightLowerOffset = controlLinkPosition - controlInputPosition;
+				rightUpperOffset = -rightLowerOffset / rightLowerArm * rightUpperArm;
+				powerPistonPosition = controlInputPosition + rightUpperOffset;
+			}
+			var rightRotation = Math.atan2(rightUpperOffset, rightUpperArm) / Math.PI * 180;
+			var leftRotation = Math.atan2(-controlLinkPosition, leftLowerArm) / Math.PI * 180;
+			var pilotValvePosition = pilotRodPosition;
+			// TODO: If ASE pressure reduced move pilotValvePosition
+			document.getElementById("group_control_input").setAttribute('transform', 'translate(' + controlInputPosition + ' 0)');
+			document.getElementById("group_control_link_right").setAttribute('transform', 'rotate(' + rightRotation + ') translate(' + controlInputPosition + ' 0)');
+			document.getElementById("group_control_link").setAttribute('transform', 'translate(' + controlLinkPosition + ' 0)');
+			document.getElementById("group_control_link_left").setAttribute('transform', 'rotate(' + leftRotation + ')');
+			document.getElementById("group_pilot_rod").setAttribute('transform', 'translate(' + pilotRodPosition + ' 0)');
+			document.getElementById("group_pilot_valve").setAttribute('transform', 'translate(' + pilotValvePosition + ' 0)');
+			document.getElementById("group_power_piston").setAttribute('transform', 'translate(' + powerPistonPosition + ' 0)');
+			if (!auxPressure)
+			{
+				document.getElementById("path_power_right").setAttribute('fill', colorBypass);
+				document.getElementById("path_power_left").setAttribute('fill', colorBypass);
+			}
+			else if (pilotValvePosition < -1)
+			{
+				powerPistonPosition += 1;
+				document.getElementById("path_power_right").setAttribute('fill', colorReturn);
+				document.getElementById("path_power_left").setAttribute('fill', colorSupply);
+			}
+			else if (pilotValvePosition > +1)
+			{
+				powerPistonPosition -= 1;
+				document.getElementById("path_power_right").setAttribute('fill', colorSupply);
+				document.getElementById("path_power_left").setAttribute('fill', colorReturn);
+			}
+			else
+			{
+				document.getElementById("path_power_right").setAttribute('fill', colorRetained);
+				document.getElementById("path_power_left").setAttribute('fill', colorRetained);
+			}
+			// TODO: Pilot valve springs
+		}
+		
+		function intervalTick() { update(); }
+		
+		function aux_pressure_click(event)
+		{
+			auxPressure = !auxPressure;
+			update();
+		}
+		function trim_click(event)
+		{
+			trimOn = !trimOn;
+			update();
+		}
+		
+		function control_input_mousedown(event)
+		{
+			controlInputDragging = true;
+		}
+		function control_input_mousemove(event)
+		{	
+			var x = event.clientX;
+			var y = event.clientY;
+			if (controlInputDragging)
+			{
+				controlInputPosition += x - mouseX;
+				if (controlInputPosition < (trimPistonPosition - limitControlInput))
+				{
+					controlInputPosition = trimPistonPosition - limitControlInput;
+				}
+				else if (controlInputPosition > (trimPistonPosition + limitControlInput))
+				{
+					controlInputPosition = trimPistonPosition + limitControlInput;
+				}
+			}
+			mouseX = x;
+			mouseY = y;
+		}
+		function control_input_mouseup(event) { controlInputDragging = false; }
+		function control_input_mouseleave(event) { controlInputDragging = false; }
+		
+		function ase_mousedown(event)
+		{
+			aseDown = true;
+			ase_mousemove(event);
+		}
+		function ase_mousemove(event)
+		{
+			if (aseDown)
+			{
+				ase = (event.clientY - aseCenterY) / aseHalfHeight;
+			}
+		}
+		function ase_mouseup(event) 
+		{
+			ase = 0;
+			aseDown = false;
+		}
+		function ase_mouseleave(event) 
+		{
+			ase = 0;
+			aseDown = false;
+		}
+		function trim_right_mousedown(event) { trimRightDown = true; }
+		function trim_right_mouseup(event) { trimRightDown = false; }
+		function trim_right_mouseleave(event) { trimRightDown = false; }
+		function trim_left_mousedown(event) { trimLeftDown = true; }
+		function trim_left_mouseup(event) { trimLeftDown = false; }
+		function trim_left_mouseleave(event) { trimLeftDown = false; }
+		
+		function getCenterById(id)
+		{
+			const boundingRect = document.getElementById(id).getBoundingClientRect();
+			return { x:  boundingRect.x + boundingRect.width / 2, y: boundingRect.y + boundingRect.height / 2 };			
+		}
+		
+		const colorBlack = '#000000';
+		const colorRed = '#ff0000';
+		const colorYellow = '#ffff00';
+		const colorGreen = '#00ff00';
+		const colorBlue = '#0000ff';
+		const colorWhite = '#ffffff';
+		const colorGrey = '#7f7f7f';
+		const colorSupply = '#ff0000';
+		const colorReturn = '#0000ff';
+		const colorRetained = '#ff00ff';
+		const colorBypass = '#00ff00';
+		const colorReduced = '#ffff00';
+		
+		const limitTrimPiston = 5;
+		const limitControlInput = 24;
+		const limitPilotRod = 5;
+		
+		document.getElementById("rect_legend_supply").setAttribute('fill', colorSupply);	
+		document.getElementById("rect_legend_return").setAttribute('fill', colorReturn);	
+		document.getElementById("rect_legend_retained").setAttribute('fill', colorRetained);	
+		document.getElementById("rect_legend_bypass").setAttribute('fill', colorBypass);	
+		document.getElementById("rect_legend_reduced").setAttribute('fill', colorReduced);	
+		
+		var aseCenterY = getCenterById("group_ase").y;
+		var aseHalfHeight = document.getElementById("group_ase").getBoundingClientRect().height / 2;
+		var rightUpperArm = getCenterById("circle_control_input").y - getCenterById("circle_power_piston_right").y;
+		var rightLowerArm = getCenterById("circle_control_link_right").y - getCenterById("circle_control_input").y;
+		var leftUpperArm = getCenterById("circle_block").y - getCenterById("circle_pilot_rod").y;
+		var leftLowerArm = getCenterById("circle_control_link_left").y - getCenterById("circle_block").y;
+		var bypassValveSpringSize = document.getElementById("group_bypass_valve_spring").getBBox().width;
+		var trimSpringSize = document.getElementById("group_trim_spring").getBBox().width;
+		
+		var auxPressure = true;
+		var trimOn = true;
+		var trimPistonPosition = 0;
+		var controlInputPosition = 0;
+		var powerPistonPosition = 0;
+		var pilotValvePosition = 0;
+		var controlLinkPosition = 0;
+		var ase = 0;
+		var aseDown = false;
+		var trimLeftDown = false;
+		var trimRightDown = false;
+		var mouseX = 0;
+		var mouseY = 0;
+		var controlInputDragging = false;
+		update();
+		var intervalID = setInterval(intervalTick, 200);
+		
+	]]></script>
+</svg>
