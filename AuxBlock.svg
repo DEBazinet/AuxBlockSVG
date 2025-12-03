@@ -546,7 +546,7 @@
 		const limitTrimPiston = 5;
 		const limitControlInput = 24;
 		const limitPilotRod = 5;
-		const pilotValveThreshold = 0.33;
+		const pilotValveThreshold = 0.5;
 		
 		document.getElementById("rect_legend_supply").setAttribute('fill', colorSupply);	
 		document.getElementById("rect_legend_return").setAttribute('fill', colorReturn);	
