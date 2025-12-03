@@ -435,15 +435,15 @@
 				document.getElementById("path_power_right").setAttribute('fill', colorBypass);
 				document.getElementById("path_power_left").setAttribute('fill', colorBypass);
 			}
-			else if (pilotValvePosition < -1)
+			else if (pilotValvePosition < -0.5)
 			{
-				powerPistonPosition += 1;
+				powerPistonPosition += pilotValvePosition + 0.5;
 				document.getElementById("path_power_right").setAttribute('fill', colorReturn);
 				document.getElementById("path_power_left").setAttribute('fill', colorSupply);
 			}
-			else if (pilotValvePosition > +1)
+			else if (pilotValvePosition > +0.5)
 			{
-				powerPistonPosition -= 1;
+				powerPistonPosition -= pilotValvePosition - 0.5;
 				document.getElementById("path_power_right").setAttribute('fill', colorSupply);
 				document.getElementById("path_power_left").setAttribute('fill', colorReturn);
 			}
