@@ -428,6 +428,8 @@
 			document.getElementById("group_pilot_rod").setAttribute('transform', 'translate(' + pilotRodPosition + ' 0)');
 			document.getElementById("group_pilot_valve").setAttribute('transform', 'translate(' + pilotValvePosition + ' 0)');
 			document.getElementById("group_power_piston").setAttribute('transform', 'translate(' + powerPistonPosition + ' 0)');
+			document.getElementById("group_pilot_valve_spring_left").setAttribute('transform', 'matrix(' + (1) + ' 0 0 1 ' + pilotRodPosition + ' 0)');
+			document.getElementById("group_pilot_valve_spring_right").setAttribute('transform', 'matrix(' + (1) + ' 0 0 1 ' + pilotValvePosition + ' 0)');
 			if (!auxPressure)
 			{
 				document.getElementById("path_power_right").setAttribute('fill', colorBypass);
@@ -450,7 +452,6 @@
 				document.getElementById("path_power_right").setAttribute('fill', colorRetained);
 				document.getElementById("path_power_left").setAttribute('fill', colorRetained);
 			}
-			// TODO: Pilot valve springs
 		}
 		
 		function intervalTick() { update(); }
@@ -558,6 +559,8 @@
 		var leftLowerArm = getCenterById("circle_control_link_left").y - getCenterById("circle_block").y;
 		var bypassValveSpringSize = document.getElementById("group_bypass_valve_spring").getBBox().width;
 		var trimSpringSize = document.getElementById("group_trim_spring").getBBox().width;
+		var pilotValveSpringLeftSize = document.getElementById("group_pilot_valve_spring_left").getBBox().width;
+		var pilotValveSpringRightSize = document.getElementById("group_pilot_valve_spring_right").getBBox().width;
 		
 		var auxPressure = true;
 		var trimOn = true;
