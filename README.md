@@ -1,6 +1,6 @@
 # AuxBlockSVG
 
-![AuxBlock.SVG](AuxBlock.svg)
+[AuxBlock.SVG](AuxBlock.svg)
 
 This is an SVG (Scalable Vector Graphics, an internet graphics format) which shows how
 the Sea King Auxiliary Hydraulic control block (Aux Block) operates. It is drawn completely with
