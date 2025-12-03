@@ -24,8 +24,8 @@
 		<rect id="rect_ase" x="109" y="26" width="30" height="40" fill="#ffffff" stroke="#000000"/>
 		<rect id="rect_ase_value" x="110" y="46" width="28" height="0" fill="#ff0000" stroke="#ff0000"/>
 		<rect id="rect_ase" x="109" y="26" width="30" height="40" fill="#ffffff" fill-opacity="0" stroke="#000000"/>
-		<text id="text_ase_left" x="124" y="40" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">left</text>
-		<text id="text_ase_right" x="124" y="60" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">right</text>
+		<text id="text_ase_right" x="124" y="40" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">right</text>
+		<text id="text_ase_left" x="124" y="60" fill="#000000" font-family="Serif" font-size="12" stroke="#000000" stroke-width="0" text-anchor="middle">left</text>
 		<rect id="rect_ase" x="109" y="26" width="30" height="40" fill="#ffffff" fill-opacity="0" stroke="#000000"/>
 	</g>
 	<g id = "group_trim_left" 
