@@ -421,6 +421,8 @@
 			var rightRotation = Math.atan2(rightUpperOffset, rightUpperArm) / Math.PI * 180;
 			var leftRotation = Math.atan2(-controlLinkPosition, leftLowerArm) / Math.PI * 180;
 			var pilotValvePosition = pilotRodPosition + ase * 3;
+			var pilotValveSpringLeftScale = (pilotValveSpringLeftSize + pilotValvePosition - pilotRodPosition) / pilotValveSpringLeftSize;
+			var pilotValveSpringRightScale = (pilotValveSpringRightSize + pilotRodPosition - pilotValvePosition) / pilotValveSpringRightSize;
 			document.getElementById("group_control_input").setAttribute('transform', 'translate(' + controlInputPosition + ' 0)');
 			document.getElementById("group_control_link_right").setAttribute('transform', 'rotate(' + rightRotation + ') translate(' + controlInputPosition + ' 0)');
 			document.getElementById("group_control_link").setAttribute('transform', 'translate(' + controlLinkPosition + ' 0)');
@@ -428,22 +430,22 @@
 			document.getElementById("group_pilot_rod").setAttribute('transform', 'translate(' + pilotRodPosition + ' 0)');
 			document.getElementById("group_pilot_valve").setAttribute('transform', 'translate(' + pilotValvePosition + ' 0)');
 			document.getElementById("group_power_piston").setAttribute('transform', 'translate(' + powerPistonPosition + ' 0)');
-			document.getElementById("group_pilot_valve_spring_left").setAttribute('transform', 'matrix(' + (1) + ' 0 0 1 ' + pilotRodPosition + ' 0)');
-			document.getElementById("group_pilot_valve_spring_right").setAttribute('transform', 'matrix(' + (1) + ' 0 0 1 ' + pilotValvePosition + ' 0)');
+			document.getElementById("group_pilot_valve_spring_left").setAttribute('transform', 'matrix(' + pilotValveSpringLeftScale + ' 0 0 1 ' + pilotRodPosition + ' 0)');
+			document.getElementById("group_pilot_valve_spring_right").setAttribute('transform', 'matrix(' + pilotValveSpringRightScale + ' 0 0 1 ' + pilotValvePosition + ' 0)');
 			if (!auxPressure)
 			{
 				document.getElementById("path_power_right").setAttribute('fill', colorBypass);
 				document.getElementById("path_power_left").setAttribute('fill', colorBypass);
 			}
-			else if (pilotValvePosition < -0.5)
+			else if (pilotValvePosition < -pilotValveThreshold)
 			{
-				powerPistonPosition += pilotValvePosition + 0.5;
+				powerPistonPosition += pilotValvePosition + pilotValveThreshold;
 				document.getElementById("path_power_right").setAttribute('fill', colorReturn);
 				document.getElementById("path_power_left").setAttribute('fill', colorSupply);
 			}
-			else if (pilotValvePosition > +0.5)
+			else if (pilotValvePosition > +pilotValveThreshold)
 			{
-				powerPistonPosition -= pilotValvePosition - 0.5;
+				powerPistonPosition -= pilotValvePosition - pilotValveThreshold;
 				document.getElementById("path_power_right").setAttribute('fill', colorSupply);
 				document.getElementById("path_power_left").setAttribute('fill', colorReturn);
 			}
@@ -544,6 +546,7 @@
 		const limitTrimPiston = 5;
 		const limitControlInput = 24;
 		const limitPilotRod = 5;
+		const pilotValveThreshold = 0.33;
 		
 		document.getElementById("rect_legend_supply").setAttribute('fill', colorSupply);	
 		document.getElementById("rect_legend_return").setAttribute('fill', colorReturn);	
